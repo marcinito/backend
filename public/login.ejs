@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/css/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav">
+            <%- include('./partials/nav.ejs') %>
+    </nav>
+    <main class="main">
+      <div class="container">
+        <form action="/login" method="post" class="form">
+            <label for="username">Username:</label>
+            <input type="text" name="username"/>
+            <label for="password">Password:</label>
+            <input type="text" name="password"/>
+            <input type="submit"/>
+        </form>
+        <button class="btn_create_account"><a href="/auth/create-account">create account</a></button>
+      </div>
+    </main>
+</body>
+</html>

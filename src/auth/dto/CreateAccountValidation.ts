@@ -2,16 +2,14 @@ import { IsNotEmpty, IsEmail, MinLength } from 'class-validator';
 
 export class CreateAccountDto {
   @IsNotEmpty()
-  nickname: string;
-
-  @IsEmail()
+  nickName: string;
   @IsNotEmpty()
-    email: string;
-
-  @MinLength(3)
+  email: string;
+  @IsNotEmpty()
   password: string;
-  @MinLength(3)
-  repeatpassword: string;
+  @IsNotEmpty()
+  passwordRepeat:string
 
+  @IsNotEmpty()
   image:any
 }

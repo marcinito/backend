@@ -1,8 +1,10 @@
-import { Body, Controller, Get, Post, Render, Res, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render, Req, Res, UsePipes, ValidationPipe } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthService } from './auth.service';
 import { CreateAccountDto } from './dto/CreateAccountValidation';
 import { Response } from 'express';
+import { loginDto } from './dto/loginDto';
+
 
 @Controller('auth')
 export class AuthController {
@@ -20,10 +22,14 @@ export class AuthController {
 
   }
   @Post("register")
-
-  createAccount(@Body() body:CreateAccountDto,@Res() res:Response){
-
-    return this.service.createAccount(body,res)
+  async createAccount(@Body() body:CreateAccountDto,@Res() res:Response,){
+    console.log(body,"what")
+    return  this.service.createAccount(body,res)
   
+  }
+
+  @Post('login')
+  loginToAccount(@Body() body:loginDto,@Res() res:Response){
+return this.service.login(body,res)
   }
 }

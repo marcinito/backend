@@ -12,23 +12,18 @@
    </nav>
    <main class="main">
    <div class="container">
-    <form action="/auth/register" method="post" enctype="multipart/form-data">
-        <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" name="nickname" required><br><br>
-    
+    <form action="/auth/register" method="POST"  class="create_account_form" >
+        <label for="nickName">Name:</label>
+        <input type="text" id="nickName" name="nickName" >
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-    
+        <input type="text" id="email" name="email" >
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-    
-        <label for="repeatpassword">Repeat Password:</label>
-        <input type="password" id="repeatpassword" name="repeatpassword" required><br><br>
-    
-        <label for="image">Profile Image:</label>
-        <input type="file" id="image" name="image"><br><br>
-    
-        <input type="submit"/>
+        <input type="password" id="password" name="password">
+        <label for="passwordR">Repeat Password:</label>
+        <input type="password" id="passwordRepeat" name="passwordRepeat">
+        <input type="file" name="image"  accept="image/*"/>
+        <input type="submit" value="upload">
+    </form>
       </form>
 
    </div>

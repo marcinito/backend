@@ -3,5 +3,14 @@
 </head>
 <div class="nav_div">
 <h1 class="title">English Gram-mar!</h1>    
-<div class="login"><button class="btn"><a href="/auth/login">Login</a></button></div>
+<div class="login">
+  <div class="userInfo">
+    <% if (yo) { %>
+        <p>Welcome <%= sombodyLoged.nickName  %>!</p>
+      <% } else { %>
+        <p>Please log in to continue.</p>
+      <% } %>
+  </div>
+    <button class="btn"><a href="/auth/login">Login</a></button>
+</div>
 </div>

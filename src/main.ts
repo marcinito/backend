@@ -5,7 +5,7 @@ import {v2 as cloudinary} from 'cloudinary';
 import { PrismaClient } from '@prisma/client/edge'
 import { ValidationPipe } from '@nestjs/common';
 import { join } from 'path';
-
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -20,8 +20,10 @@ cloudinary.config({
   api_key: '566514497645627', 
   api_secret: '***************************' 
 });
+
    app.setBaseViewsDir(join(__dirname, '..', 'public'));
   app.setViewEngine('ejs');
+  app.use(cookieParser())
 
 
   await app.listen(3000);
